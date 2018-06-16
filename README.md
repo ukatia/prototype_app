@@ -1,8 +1,16 @@
 # PrototypeApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
+## MEAN stack application prototype
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.<br>
+It uses [Express](https://expressjs.com) which is framework built on top of Node.js and
+[MongoDB](https://www.mongodb.com/) as a database.
 
-## Development server
+## Run backend server
+
+Run `node server.js` in the application root directory.
+
+
+## Development server 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
