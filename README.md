@@ -7,8 +7,12 @@ It uses [Express](https://expressjs.com) which is framework built on top of Node
 
 ## Run backend server
 
-Run `node server.js` in the application root directory.
-
+Run `node server.js` in the application root directory. <br>
+If successfull, the following should be displayed:
+```
+Listening on port 4000
+Database is connected
+```
 
 ## Development server 
 

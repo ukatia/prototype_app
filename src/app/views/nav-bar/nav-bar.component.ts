@@ -12,4 +12,10 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+    // remove login item from local storage
+    localStorage.removeItem('login')
+    // refresh page
+    location.reload();
+  }
 }

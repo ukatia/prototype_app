@@ -9,7 +9,7 @@ export class CustomerService {
 
   constructor(private http: HttpClient) { }
 
-  addCustomer(firstName, lastName, email, telephone) {
+  addCustomer(firstName, lastName, email, telephone): Observable<any> {
     const uri = 'http://localhost:4000/customers/add';
     const obj = {
       firstName: firstName,
@@ -17,8 +17,7 @@ export class CustomerService {
       email: email,
       telephone: telephone
     };
-    this.http.post(uri, obj)
-        .subscribe(res => console.log('Done'));
+    return this.http.post(uri, obj);
   }
 
 

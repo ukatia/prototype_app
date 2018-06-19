@@ -1,11 +1,9 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    {{ title }}
-  </div>
+<app-nav-bar></app-nav-bar>
+<div class="panel panel-primary panel-tab">
   <div class="panel-body">
     <form [formGroup]="angForm" novalidate>
       <div class="form-group">
-        <label class="col-md-4">Customer First Name</label>
+        <label class="col-md-4">First Name</label>
         <input type="text" class="form-control" formControlName="firstName" #firstName />
       </div>
       <div *ngIf="angForm.controls['firstName'].invalid && (angForm.controls['firstName'].dirty || angForm.controls['firstName'].touched)" class="alert alert-danger">
@@ -14,7 +12,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Customer Last Name</label>
+        <label class="col-md-4">Last Name</label>
         <input type="text" class="form-control" formControlName="lastName" #lastName/>
       </div>
       <div *ngIf="angForm.controls['lastName'].invalid && (angForm.controls['lastName'].dirty || angForm.controls['lastName'].touched)" class="alert alert-danger">
@@ -23,25 +21,29 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Customer Email</label>
-        <input type="text" class="form-control" formControlName="email" #email/>
+        <label class="col-md-4">Email</label>
+        <input
+           [ngClass]="{'has-danger': angForm.controls.email.invalid && angForm.controls.email.dirty}"
+           type="text" class="form-control" formControlName="email" #email/>
       </div>
-      <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['email'].errors.required">
+      <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
+        <div *ngIf="angForm.controls['email'].errors.required" class="alert alert-danger">
           Email is required.
         </div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Customer Telephone</label>
-        <input type="text" class="form-control" formControlName="telephone" #telephone/>
+        <label class="col-md-4">Telephone</label>
+        <input 
+        [ngClass]="{'has-danger': angForm.controls.telephone.invalid && angForm.controls.telephone.dirty}"
+        type="text" class="form-control" formControlName="telephone" #telephone/>
       </div>
-      <div *ngIf="angForm.controls['telephone'].invalid && (angForm.controls['telephone'].dirty || angForm.controls['telephone'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['telephone'].errors.required">
+      <div *ngIf="angForm.controls['telephone'].invalid && (angForm.controls['telephone'].dirty || angForm.controls['telephone'].touched)">
+        <div *ngIf="angForm.controls['telephone'].errors.required" class="alert alert-danger">
          Telephone is required.
         </div>
       </div>
         <div class="form-group">
-          <button (click)="addCustomer(firstName.value, lastName.value, email.value, telephone.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+          <button (click)="addCustomer(firstName.value, lastName.value, email.value, telephone.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary btn-Add">Add</button>
         </div>
     </form>
   </div>

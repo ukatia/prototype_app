@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
-<div>
+<div class='panel-tab'>
   <table class="table table-hover table-customer">
-    <thead>
+    <thead class='th'>
     <tr>
         <td>First Name</td>
         <td>Last Name</td>
@@ -17,8 +17,8 @@
             <td>{{ customer.lastName }}</td>
             <td>{{ customer.email }}</td>
             <td>{{ customer.telephone }}</td>
-            <td><a [routerLink]="['/edit', customer._id]" class="btn btn-primary">Edit</a></td>
-            <td><button (click)="deleteCustomer(customer._id)"  class="btn btn-danger">Delete</button></td>
+            <td><a [routerLink]="['/edit', customer._id]" class="btn btn-primary btn-Edit">Edit</a></td>
+            <td><button (click)="deleteCustomer(customer._id)"  class="btn btn-danger btn-Delete">Delete</button></td>
         </tr>
     </tbody>
   </table>

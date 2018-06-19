@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -26,7 +27,7 @@ export class IndexComponent implements OnInit {
 
   deleteCustomer(id) {
     this.customerService.deleteCustomer(id).subscribe(res => {
-      console.log('Customer Deleted');
+      this.getCustomers();
     });
-}
+  }
 }

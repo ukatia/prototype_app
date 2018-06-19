@@ -9,13 +9,15 @@ import { CreateComponent } from './views/create/create.component';
 import { EditComponent } from './views/edit/edit.component';
 import { IndexComponent } from './views/index/index.component';
 
+import { AuthGuard } from './auth/auth-guard.service';
+
 /* Register our routes */
 const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'create', component: CreateComponent },
-    { path: 'edit/:id', component: EditComponent },
-    { path: 'index', component: IndexComponent }
+    { path: 'create', component: CreateComponent,  canActivate: [AuthGuard] },
+    { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard] },
+    { path: 'index', component: IndexComponent, canActivate: [AuthGuard] }
 ];
 
 

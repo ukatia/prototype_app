@@ -1,0 +1,18 @@
+body {
+    background-color: #eff3f4;
+}
+
+.panel-tab {
+    margin-top: 80px;
+}
+
+.panel-heading {
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.btn-Update {
+    margin-top: 4px;
+    background-color: #3877fd;
+    border-color: #3877fd;
+}

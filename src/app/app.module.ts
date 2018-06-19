@@ -13,10 +13,12 @@ import { IndexComponent } from './views/index/index.component';
 
 // app modules
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule }   from '@angular/forms';
 
 // services
 import { CustomerService } from './services/customer-service/customer.service';
 import { NavBarComponent } from './views/nav-bar/nav-bar.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 
 @NgModule({
@@ -32,9 +34,10 @@ import { NavBarComponent } from './views/nav-bar/nav-bar.component';
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [CustomerService],
+  providers: [CustomerService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

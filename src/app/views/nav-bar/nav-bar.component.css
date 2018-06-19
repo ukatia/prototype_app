@@ -1,0 +1,5 @@
+#nav-bar > li:last-child {
+    position: absolute;
+    right: 20px;
+    cursor: pointer; 
+}

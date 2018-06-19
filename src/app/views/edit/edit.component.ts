@@ -23,8 +23,8 @@ export class EditComponent implements OnInit {
     this.angForm = this.fb.group({
       firstName: ['', Validators.required ],
       lastName: ['', Validators.required ],
-      email: ['', Validators.required ],
-      telephone: ['', Validators.required ]
+      email: ['', [Validators.required,  Validators.pattern("[^ @]*@[^ @]*")] ],
+      telephone: ['', [Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)] ]
    });
   }
 
