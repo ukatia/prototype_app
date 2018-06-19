@@ -30,8 +30,8 @@ export class EditComponent implements OnInit {
 
   updateCustomer(firstName, lastName, email, telephone) {
     this.route.params.subscribe(params => {
-    this.customerService.updateCustomer(firstName, lastName, email, telephone, params['id']);
-    this.router.navigate(['index']);
+    this.customerService.updateCustomer(firstName, lastName, email, telephone, params['id']).subscribe(res =>
+      this.router.navigate(['index']));
   });
 }
 

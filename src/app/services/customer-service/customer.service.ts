@@ -9,6 +9,7 @@ export class CustomerService {
 
   constructor(private http: HttpClient) { }
 
+  // add customer
   addCustomer(firstName, lastName, email, telephone): Observable<any> {
     const uri = 'http://localhost:4000/customers/add';
     const obj = {
@@ -20,27 +21,26 @@ export class CustomerService {
     return this.http.post(uri, obj);
   }
 
-
+ // get all customers
   getCustomers() {
     const uri = 'http://localhost:4000/customers';
-    return this
-            .http
-            .get(uri)
-            .map(res => {
-              return res;
-            });
+    return this.http.get(uri)
+                .map(res => {
+                  return res;
+                });
   }
 
+
+  // gets info for customer - to edit
   editCustomer(id) {
     const uri = 'http://localhost:4000/customers/edit/' + id;
-    return this
-            .http
-            .get(uri)
-            .map(res => {
-              return res;
-            });
+    return this.http.get(uri)
+                .map(res => {
+                  return res;
+                });
   }
 
+  // update customer details
   updateCustomer(firstName, lastName, email, telephone, id) {
     const uri = 'http://localhost:4000/customers/update/' + id;
 
@@ -50,20 +50,16 @@ export class CustomerService {
       email: email,
       telephone: telephone
     };
-    this
-      .http
-      .post(uri, obj)
-      .subscribe(res => console.log('Done'));
+    return this.http.put(uri, obj);
   }
 
+  // delete customer
   deleteCustomer(id) {
     const uri = 'http://localhost:4000/customers/delete/' + id;
 
-        return this
-            .http
-            .get(uri)
-            .map(res => {
-              return res;
-            });
+    return this.http.delete(uri)
+                    .map(res => {
+                      return res;
+                  });
   }
 }

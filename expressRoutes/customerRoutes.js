@@ -40,7 +40,7 @@ customerRoutes.route('/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-customerRoutes.route('/update/:id').post(function (req, res) {
+customerRoutes.route('/update/:id').put(function (req, res) {
    Customer.findById(req.params.id, function(err, customer) {
     if (!customer)
       return next(new Error('Could not load Document'));
@@ -61,7 +61,7 @@ customerRoutes.route('/update/:id').post(function (req, res) {
 });
 
 // Defined delete | remove | destroy route
-customerRoutes.route('/delete/:id').get(function (req, res) {
+customerRoutes.route('/delete/:id').delete(function (req, res) {
    Customer.findByIdAndRemove({_id: req.params.id}, function(err, customer){
         if(err) res.json(err);
         else res.json('Successfully removed');
