@@ -13,6 +13,12 @@ html {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
+
+  h1 {
+    text-align: center;
+    color: #217093;
+    font-weight: 700;
+  }
   
   form {
     position: absolute;
